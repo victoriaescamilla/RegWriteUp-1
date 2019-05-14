@@ -1,0 +1,38 @@
+---
+title: "Regression Writeup"
+author: "Victoria Escamilla"
+date: "May 14, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(tigerstats)
+```
+
+## First Read in the data
+
+```{r}
+theData <- read.csv(file="datadata.csv",header = TRUE)
+```
+
+Now we are going to look at what relations exists between our variables with plots.
+
+## Including Plots
+
+You can also embed plots for example:
+
+### ggplot SIMS~ARM
+```{r}
+basicNN <- ggplot(theData,aes(x=SIMS,y=ARM))
+```
+## SIMS and ARM plot
+```{r}
+basicNN + geom_point()
+basicNN + geom_point() + geom_lm()
+basicNN + geom_point() + geom_lm() + geom_smooth()
+```
+## Now lets take a look at how the SIMS and GRIP correlate.
+
+
+
